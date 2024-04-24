@@ -4,6 +4,7 @@ import "./globals.css";
 // import Head from "next/head";
 import MetaSeo from "metaseo/Metadata";
 import { META_DEFAULT_VIEWPORT } from "metaseo";
+import { AppProvider } from "@/context/app/provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,18 +19,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <head>
-        <MetaSeo config={{
-          name: "Demo Meta SEO",
-          title: "Demo Meta SEO package",
-          keywords: ["demo", "nextjs", "metadata", "seo", "metadata seo"],
-          description: "Demo metadata seo with package metaseo",
-          disableOg: true,
-          viewport: META_DEFAULT_VIEWPORT,
-        }} />
-      </head>
-      <body className={inter.className}>{children}</body>
-    </html>
+    <AppProvider>
+      <html lang="en">
+        <head>
+          <MetaSeo config={{
+            name: "Demo Meta SEO",
+            title: "Demo Meta SEO package",
+            keywords: ["demo", "nextjs", "metadata", "seo", "metadata seo"],
+            description: "Demo metadata seo with package metaseo",
+            disableOg: true,
+            viewport: META_DEFAULT_VIEWPORT,
+          }} />
+        </head>
+        <body className={inter.className}>{children}</body>
+      </html>
+    </AppProvider>
   );
 }
