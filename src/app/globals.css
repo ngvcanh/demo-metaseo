@@ -6,4 +6,80 @@
   .Tabs-root {
     @apply w-full overflow-hidden;
   }
+
+  .Tabs-listWrapper {
+    @apply relative flex;
+  }
+
+  .Tab-button {
+    @apply flex items-center px-4 h-11 border-b-2 text-sm border-gray-300 transition-all;
+  }
+
+  .Tab-label {
+    @apply transition-all;
+  }
+
+  .Tab-active {
+    @apply text-cyan-500;
+  }
+
+  .Tabs-indicator {
+    @apply absolute bottom-0 h-0.5 bg-cyan-500 transition-all;
+  }
+
+  .Tabs-content {
+    @apply w-full min-w-full max-w-full overflow-hidden transition-all;
+  }
+
+  .Tabs-panes {
+    @apply flex transition-all;
+  }
+
+  .Input-label {
+    @apply text-sm font-medium block;
+  }
+
+  .Input-wrapper {
+    @apply flex items-center w-full border rounded transition-all;
+  }
+
+  .Input-wrapper:not(.Input-multiline) {
+    @apply h-11;
+  }
+
+  .Input-wrapper.Input-multiline {
+    @apply min-h-[44px];
+  }
+
+  .Input-focused {
+    @apply border-cyan-500;
+  }
+
+  .Collapse-title {
+    @apply flex bg-gray-100 h-11 items-center px-2 cursor-pointer select-none;
+  }
+
+  .Collapse-titleInner {
+    @apply w-full shrink grow-0 truncate text-sm font-medium;
+  }
+
+  .Collapse-content {
+    @apply overflow-hidden transition-all;
+  }
+
+  .Input-wrapper.Checkbox-wrapper {
+    @apply border-0 gap-1;
+  }
+
+  .Checkbox-checkbox {
+    @apply
+      inline-block w-5 h-5 min-w-5 min-h-5 bg-cyan-500 rounded relative transition-all
+      before:absolute before:w-3 before:h-2 before:border-l-2 before:border-b-2 before:border-white
+      before:-rotate-45 before:left-1 before:top-1 before:opacity-0 before:scale-0
+    ;
+  }
+
+  .Input-wrapper > input:checked + .Checkbox-checkbox {
+    @apply before:opacity-100 before:scale-100;
+  }
 }

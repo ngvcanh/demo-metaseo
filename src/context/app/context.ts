@@ -5,5 +5,6 @@ import { initialState } from "./state";
 export const AppContext = createContext<AppValue>({
   state: {
     ...initialState,
-  }
+  },
+  setMeta() {},
 });

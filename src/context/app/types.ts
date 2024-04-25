@@ -1,7 +1,10 @@
-import { createContext } from "react";
+import { MetadataConfiguration } from "metaseo";
 
-export interface AppState {}
+export interface AppState {
+  meta: MetadataConfiguration;
+}
 
 export interface AppValue {
   state: AppState;
+  setMeta(key: string, value: any): void;
 }
